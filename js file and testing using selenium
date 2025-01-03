@@ -1,0 +1,16 @@
+const{Builder, By, Key, Until}=require('selenium-webdriver');
+(async function example(){
+  let driver=await new Builder().forBrowser('chrome').build();
+ try{
+     await driver.get('https://www.google.com');
+     console.log('Search Completed!');
+  }finally{
+     await driver.quit();
+}
+})();
+
+
+cd "selenium path"
+npm init -y
+npm install selenium-webdriver chromedriver
+node test.js
