@@ -1,0 +1,188 @@
+Microsoft Windows [Version 10.0.22631.4460]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\aksha>docker --version
+Docker version 27.3.1, build ce12230
+
+C:\Users\aksha>mkdir docker-app
+
+C:\Users\aksha>cd docker-app
+
+C:\Users\aksha\docker-app>docker build -t my-docker-app
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+"docker build" requires exactly 1 argument.
+See 'docker build --help'.
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+Build an image from a Dockerfile
+
+C:\Users\aksha\docker-app>docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+C:\Users\aksha\docker-app>docker build -t my-docker-app .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+unable to prepare context: unable to evaluate symlinks in Dockerfile path: CreateFile C:\Users\aksha\docker-app\Dockerfile: The system cannot find the file specified.
+
+C:\Users\aksha\docker-app>cd C:\Users\aksha\docker-app
+
+C:\Users\aksha\docker-app>docker build -t my-docker-app .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+unable to prepare context: unable to evaluate symlinks in Dockerfile path: CreateFile C:\Users\aksha\docker-app\Dockerfile: The system cannot find the file specified.
+
+C:\Users\aksha\docker-app>dir
+ Volume in drive C is OS
+ Volume Serial Number is E8CA-51FC
+
+ Directory of C:\Users\aksha\docker-app
+
+11/30/2024  10:33 AM    <DIR>          .
+11/30/2024  10:22 AM    <DIR>          ..
+11/30/2024  10:29 AM               187 app.py
+11/30/2024  10:33 AM               127 dockerfile.txt
+11/30/2024  10:30 AM                 5 requirments.txt
+               3 File(s)            319 bytes
+               2 Dir(s)  252,571,402,240 bytes free
+
+C:\Users\aksha\docker-app>ren dockerfile.txt Dockerfile
+
+C:\Users\aksha\docker-app>dir
+ Volume in drive C is OS
+ Volume Serial Number is E8CA-51FC
+
+ Directory of C:\Users\aksha\docker-app
+
+11/30/2024  10:38 AM    <DIR>          .
+11/30/2024  10:22 AM    <DIR>          ..
+11/30/2024  10:29 AM               187 app.py
+11/30/2024  10:33 AM               127 Dockerfile
+11/30/2024  10:30 AM                 5 requirments.txt
+               3 File(s)            319 bytes
+               2 Dir(s)  252,570,804,224 bytes free
+
+C:\Users\aksha\docker-app>ren requirments.txt requirements.txt
+
+C:\Users\aksha\docker-app>dir
+ Volume in drive C is OS
+ Volume Serial Number is E8CA-51FC
+
+ Directory of C:\Users\aksha\docker-app
+
+11/30/2024  10:39 AM    <DIR>          .
+11/30/2024  10:22 AM    <DIR>          ..
+11/30/2024  10:29 AM               187 app.py
+11/30/2024  10:33 AM               127 Dockerfile
+11/30/2024  10:30 AM                 5 requirements.txt
+               3 File(s)            319 bytes
+               2 Dir(s)  252,569,296,896 bytes free
+
+C:\Users\aksha\docker-app>docker build -t my-docker-app .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  4.096kB
+Step 1/6 : FROM python:3.9-slim
+3.9-slim: Pulling from library/python
+2d429b9e73a6: Pull complete
+4920a3bd5f7e: Pull complete
+77edb37367fa: Pull complete
+02c34c079cc8: Pull complete
+Digest: sha256:6250eb7983c08b3cf5a7db9309f8630d3ca03dd152158fa37a3f8daaf397085d
+Status: Downloaded newer image for python:3.9-slim
+ ---> 6a22698eab0e
+Step 2/6 : WORKDIR /app
+ ---> Running in d2502feb208d
+ ---> Removed intermediate container d2502feb208d
+ ---> cb29ee3ff2b4
+Step 3/6 : COPY . /app
+ ---> 3b3ca430f252
+Step 4/6 : RUN pip install -r requirements.txt
+ ---> Running in 8842cba2ce29
+Collecting flask
+  Downloading flask-3.1.0-py3-none-any.whl (102 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.0/103.0 kB 1.4 MB/s eta 0:00:00
+Collecting blinker>=1.9
+  Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Collecting importlib-metadata>=3.6
+  Downloading importlib_metadata-8.5.0-py3-none-any.whl (26 kB)
+Collecting itsdangerous>=2.2
+  Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Collecting Jinja2>=3.1.2
+  Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.3/133.3 kB 1.9 MB/s eta 0:00:00
+Collecting Werkzeug>=3.1
+  Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.5/224.5 kB 2.4 MB/s eta 0:00:00
+Collecting click>=8.1.3
+  Downloading click-8.1.7-py3-none-any.whl (97 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.9/97.9 kB 6.9 MB/s eta 0:00:00
+Collecting zipp>=3.20
+  Downloading zipp-3.21.0-py3-none-any.whl (9.6 kB)
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+Installing collected packages: zipp, MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, importlib-metadata, flask
+Successfully installed Jinja2-3.1.4 MarkupSafe-3.0.2 Werkzeug-3.1.3 blinker-1.9.0 click-8.1.7 flask-3.1.0 importlib-metadata-8.5.0 itsdangerous-2.2.0 zipp-3.21.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+[notice] A new release of pip is available: 23.0.1 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
+ ---> Removed intermediate container 8842cba2ce29
+ ---> 04278d5b84f5
+Step 5/6 : EXPOSE 5000
+ ---> Running in a5aa0759308c
+ ---> Removed intermediate container a5aa0759308c
+ ---> a8ebd22a1118
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in 5be12a74fc56
+ ---> Removed intermediate container 5be12a74fc56
+ ---> 77c2ea9cc006
+Successfully built 77c2ea9cc006
+Successfully tagged my-docker-app:latest
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+
+C:\Users\aksha\docker-app>docker run -d -p 5000:5000 my-docker-app
+b61c190746aa43013fee48de66d2f7b1b29d7fadb47e2abf4ae84d5dbcf1f20a
+
+C:\Users\aksha\docker-app>
+
+
+
+
+
+
+
+
+Dockerfile
+FROM python:3.9-slim
+WORKDIR /app
+COPY . /app
+RUN pip install -r requirements.txt
+EXPOSE 5000
+CMD ["python", "app.py"]
+
+
+app.py
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello, Docker World!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
+
+
+requirements.txt
+Flask
