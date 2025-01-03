@@ -1,0 +1,210 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\admin> docker --version
+Docker version 27.3.1, build ce12230
+PS C:\Users\admin> docker info
+Client:
+ Version:    27.3.1
+ Context:    desktop-linux
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.17.1-desktop.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+  compose: Docker Compose (Docker Inc.)
+    Version:  v2.29.7-desktop.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+  debug: Get a shell into any image or container (Docker Inc.)
+    Version:  0.0.37
+    Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+  desktop: Docker Desktop commands (Alpha) (Docker Inc.)
+    Version:  v0.0.15
+    Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+  dev: Docker Dev Environments (Docker Inc.)
+    Version:  v0.1.2
+    Path:     C:\Program Files\Docker\cli-plugins\docker-dev.exe
+  extension: Manages Docker extensions (Docker Inc.)
+    Version:  v0.2.27
+    Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+  feedback: Provide feedback, right in your terminal! (Docker Inc.)
+    Version:  v1.0.5
+    Path:     C:\Program Files\Docker\cli-plugins\docker-feedback.exe
+  init: Creates Docker-related starter files for your project (Docker Inc.)
+    Version:  v1.3.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+  sbom: View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc.)
+    Version:  0.6.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-sbom.exe
+  scout: Docker Scout (Docker Inc.)
+    Version:  v1.14.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-scout.exe
+
+Server:
+ Containers: 2
+  Running: 1
+  Paused: 0
+  Stopped: 1
+ Images: 2
+ Server Version: 27.3.1
+ Storage Driver: overlayfs
+  driver-type: io.containerd.snapshotter.v1
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 1
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 nvidia runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 472731909fa34bd7bc9c087e4c27943f9835f111
+ runc version: v1.1.13-0-g58aa920
+ init version: de40ad0
+ Security Options:
+  seccomp
+   Profile: unconfined
+ Kernel Version: 5.15.167.4-microsoft-standard-WSL2
+ Operating System: Docker Desktop
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 16
+ Total Memory: 6.701GiB
+ Name: docker-desktop
+ ID: 2ca9fc11-56f2-4bd1-a2e5-7b562068ed46
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ HTTP Proxy: http.docker.internal:3128
+ HTTPS Proxy: http.docker.internal:3128
+ No Proxy: hubproxy.docker.internal
+ Labels:
+  com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+ Experimental: false
+ Insecure Registries:
+  hubproxy.docker.internal:5555
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+WARNING: No blkio throttle.read_bps_device support
+WARNING: No blkio throttle.write_bps_device support
+WARNING: No blkio throttle.read_iops_device support
+WARNING: No blkio throttle.write_iops_device support
+WARNING: daemon is not using the default seccomp profile
+PS C:\Users\admin> docker images
+REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+redis                    latest    af0be38eb8e4   7 weeks ago     174MB
+docker/getting-started   latest    d79336f4812b   23 months ago   73.9MB
+PS C:\Users\admin> docker pull redis
+Using default tag: latest
+latest: Pulling from library/redis
+Digest: sha256:af0be38eb8e43191bae9b03fe5c928803930b6f93e2dde3a7ad1165c04b1ce22
+Status: Image is up to date for redis:latest
+docker.io/library/redis:latest
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview redis
+PS C:\Users\admin> docker run -it redis
+1:C 23 Nov 2024 04:55:34.073 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 23 Nov 2024 04:55:34.073 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 23 Nov 2024 04:55:34.073 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 23 Nov 2024 04:55:34.074 * monotonic clock: POSIX clock_gettime
+                _._
+           _.-``__ ''-._
+      _.-``    `.  `_.  ''-._           Redis Community Edition
+  .-`` .-```.  ```\/    _.,_ ''-._     7.4.1 (00000000/0) 64 bit
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 1
+  `-._    `-._  `-./  _.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |           https://redis.io
+  `-._    `-._`-.__.-'_.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |
+  `-._    `-._`-.__.-'_.-'    _.-'
+      `-._    `-.__.-'    _.-'
+          `-._        _.-'
+              `-.__.-'
+
+1:M 23 Nov 2024 04:55:34.076 * Server initialized
+1:M 23 Nov 2024 04:55:34.077 * Ready to accept connections tcp
+^C1:signal-handler (1732338753) Received SIGINT scheduling shutdown...
+1:M 23 Nov 2024 05:12:33.607 * User requested shutdown...
+1:M 23 Nov 2024 05:12:33.607 * Saving the final RDB snapshot before exiting.
+1:M 23 Nov 2024 05:12:33.625 * DB saved on disk
+1:M 23 Nov 2024 05:12:33.625 # Redis is now ready to exit, bye bye...
+PS C:\Users\admin> docker ps -help
+unknown shorthand flag: 'e' in -elp
+See 'docker ps --help'.
+PS C:\Users\admin> docker ps --help
+
+Usage:  docker ps [OPTIONS]
+
+List containers
+
+Aliases:
+  docker container ls, docker container list, docker container ps, docker ps
+
+Options:
+  -a, --all             Show all containers (default shows just running)
+  -f, --filter filter   Filter output based on conditions provided
+      --format string   Format output using a custom template:
+                        'table':            Print output in table format
+                        with column headers (default)
+                        'table TEMPLATE':   Print output in table format
+                        using the given Go template
+                        'json':             Print in JSON format
+                        'TEMPLATE':         Print output using the given
+                        Go template.
+                        Refer to https://docs.docker.com/go/formatting/
+                        for more information about formatting output with
+                        templates
+  -n, --last int        Show n last created containers (includes all
+                        states) (default -1)
+  -l, --latest          Show the latest created container (includes all
+                        states)
+      --no-trunc        Don't truncate output
+  -q, --quiet           Only display container IDs
+  -s, --size            Display total file sizes
+PS C:\Users\admin> docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Users\admin> docker container ls
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                NAMES
+f043a55615a9   redis                    "docker-entrypoint.s…"   32 minutes ago   Up 6 seconds    6379/tcp             priceless_torvalds
+d77223b26741   redis                    "docker-entrypoint.s…"   42 minutes ago   Up 9 seconds    6379/tcp             relaxed_jones
+90d800b3535a   docker/getting-started   "/docker-entrypoint.…"   11 days ago      Up 15 seconds   0.0.0.0:80->80/tcp   beautiful_galileo
+PS C:\Users\admin> docker stop f043a55615a9
+f043a55615a9
+PS C:\Users\admin> docker stop 90d800b3535a
+90d800b3535a
+PS C:\Users\admin> docker rm f043a55615a9
+f043a55615a9
+PS C:\Users\admin> docker logs d77223b26741
+1:C 23 Nov 2024 04:45:46.826 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 23 Nov 2024 04:45:46.826 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 23 Nov 2024 04:45:46.826 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 23 Nov 2024 04:45:46.826 * monotonic clock: POSIX clock_gettime
+1:M 23 Nov 2024 04:45:46.829 * Running mode=standalone, port=6379.
+1:M 23 Nov 2024 04:45:46.831 * Server initialized
+1:M 23 Nov 2024 04:45:46.832 * Ready to accept connections tcp
+1:signal-handler (1732337522) Received SIGTERM scheduling shutdown...
+1:M 23 Nov 2024 04:52:02.285 * User requested shutdown...
+1:M 23 Nov 2024 04:52:02.285 * Saving the final RDB snapshot before exiting.
+1:M 23 Nov 2024 04:52:02.290 * DB saved on disk
+1:M 23 Nov 2024 04:52:02.290 # Redis is now ready to exit, bye bye...
+1:C 23 Nov 2024 05:28:19.124 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 23 Nov 2024 05:28:19.124 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 23 Nov 2024 05:28:19.124 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 23 Nov 2024 05:28:19.125 * monotonic clock: POSIX clock_gettime
+1:M 23 Nov 2024 05:28:19.126 * Running mode=standalone, port=6379.
+1:M 23 Nov 2024 05:28:19.126 * Server initialized
+1:M 23 Nov 2024 05:28:19.138 * Loading RDB produced by version 7.4.1
+1:M 23 Nov 2024 05:28:19.138 * RDB age 2177 seconds
+1:M 23 Nov 2024 05:28:19.138 * RDB memory usage when created 0.90 Mb
+1:M 23 Nov 2024 05:28:19.138 * Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 23 Nov 2024 05:28:19.138 * DB loaded from disk: 0.012 seconds
+1:M 23 Nov 2024 05:28:19.138 * Ready to accept connections tcp

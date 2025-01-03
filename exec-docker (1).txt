@@ -1,0 +1,466 @@
+PS C:\Users\admin> docker exec -it beautiful_galileo sh
+/ # ls
+bin                   docker-entrypoint.d   etc                   lib                   mnt                   proc                  run                   srv                   tmp                   var
+dev                   docker-entrypoint.sh  home                  media                 opt                   root                  sbin                  sys                   usr
+/ # cd /
+/ # pwd
+/
+/ # df -h
+Filesystem                Size      Used Available Use% Mounted on
+overlay                1006.9G      1.2G    954.4G   0% /
+tmpfs                    64.0M         0     64.0M   0% /dev
+tmpfs                     3.4G         0      3.4G   0% /sys/fs/cgroup
+shm                      64.0M         0     64.0M   0% /dev/shm
+/dev/sdd               1006.9G      1.2G    954.4G   0% /etc/resolv.conf
+/dev/sdd               1006.9G      1.2G    954.4G   0% /etc/hostname
+/dev/sdd               1006.9G      1.2G    954.4G   0% /etc/hosts
+tmpfs                     3.4G         0      3.4G   0% /proc/acpi
+tmpfs                    64.0M         0     64.0M   0% /proc/kcore
+tmpfs                    64.0M         0     64.0M   0% /proc/keys
+tmpfs                    64.0M         0     64.0M   0% /proc/timer_list
+tmpfs                     3.4G         0      3.4G   0% /sys/firmware
+/ # ps aux
+PID   USER     TIME  COMMAND
+    1 root      0:00 nginx: master process nginx -g daemon off;
+   22 nginx     0:00 nginx: worker process
+   23 nginx     0:00 nginx: worker process
+   24 nginx     0:00 nginx: worker process
+   25 nginx     0:00 nginx: worker process
+   26 nginx     0:00 nginx: worker process
+   27 nginx     0:00 nginx: worker process
+   28 nginx     0:00 nginx: worker process
+   29 nginx     0:00 nginx: worker process
+   30 nginx     0:00 nginx: worker process
+   31 nginx     0:00 nginx: worker process
+   32 nginx     0:00 nginx: worker process
+   33 nginx     0:00 nginx: worker process
+   34 nginx     0:00 nginx: worker process
+   35 nginx     0:00 nginx: worker process
+   36 nginx     0:00 nginx: worker process
+   37 nginx     0:00 nginx: worker process
+   52 root      0:00 sh
+   60 root      0:00 ps aux
+/ # printenv
+HOSTNAME=90d800b3535a
+SHLVL=1
+HOME=/root
+OLDPWD=/
+PKG_RELEASE=1
+TERM=xterm
+NGINX_VERSION=1.23.3
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+NJS_VERSION=0.7.9
+PWD=/
+/ # uptime
+ 05:52:40 up  1:07,  0 users,  load average: 0.00, 0.00, 0.00
+/ # find / -name "nginx.conf"
+find: /proc/22/task/22/fdinfo: Permission denied
+find: /proc/22/fdinfo: Permission denied
+find: /proc/23/task/23/fdinfo: Permission denied
+find: /proc/23/fdinfo: Permission denied
+find: /proc/24/task/24/fdinfo: Permission denied
+find: /proc/24/fdinfo: Permission denied
+find: /proc/25/task/25/fdinfo: Permission denied
+find: /proc/25/fdinfo: Permission denied
+find: /proc/26/task/26/fdinfo: Permission denied
+find: /proc/26/fdinfo: Permission denied
+find: /proc/27/task/27/fdinfo: Permission denied
+find: /proc/27/fdinfo: Permission denied
+find: /proc/28/task/28/fdinfo: Permission denied
+find: /proc/28/fdinfo: Permission denied
+find: /proc/29/task/29/fdinfo: Permission denied
+find: /proc/29/fdinfo: Permission denied
+find: /proc/30/task/30/fdinfo: Permission denied
+find: /proc/30/fdinfo: Permission denied
+find: /proc/31/task/31/fdinfo: Permission denied
+find: /proc/31/fdinfo: Permission denied
+find: /proc/32/task/32/fdinfo: Permission denied
+find: /proc/32/fdinfo: Permission denied
+find: /proc/33/task/33/fdinfo: Permission denied
+find: /proc/33/fdinfo: Permission denied
+find: /proc/34/task/34/fdinfo: Permission denied
+find: /proc/34/fdinfo: Permission denied
+find: /proc/35/task/35/fdinfo: Permission denied
+find: /proc/35/fdinfo: Permission denied
+find: /proc/36/task/36/fdinfo: Permission denied
+find: /proc/36/fdinfo: Permission denied
+find: /proc/37/task/37/fdinfo: Permission denied
+find: /proc/37/fdinfo: Permission denied
+/etc/nginx/nginx.conf
+PS C:\Users\admin> docker inspect d77223b26741
+[
+    {
+        "Id": "d77223b267417bb8e1dcdf554867d406abce0c68fc036896f4f6b93ab4aa2d3f",
+        "Created": "2024-11-23T04:45:46.197217102Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "redis-server"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 816,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2024-11-23T05:28:18.871344231Z",
+            "FinishedAt": "2024-11-23T04:52:02.295206988Z"
+        },
+        "Image": "sha256:af0be38eb8e43191bae9b03fe5c928803930b6f93e2dde3a7ad1165c04b1ce22",
+        "ResolvConfPath": "/var/lib/docker/containers/d77223b267417bb8e1dcdf554867d406abce0c68fc036896f4f6b93ab4aa2d3f/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/d77223b267417bb8e1dcdf554867d406abce0c68fc036896f4f6b93ab4aa2d3f/hostname",
+        "HostsPath": "/var/lib/docker/containers/d77223b267417bb8e1dcdf554867d406abce0c68fc036896f4f6b93ab4aa2d3f/hosts",
+        "LogPath": "/var/lib/docker/containers/d77223b267417bb8e1dcdf554867d406abce0c68fc036896f4f6b93ab4aa2d3f/d77223b267417bb8e1dcdf554867d406abce0c68fc036896f4f6b93ab4aa2d3f-json.log",
+        "Name": "/relaxed_jones",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                30,
+                120
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": null,
+            "Name": "overlayfs"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "c852f262f56626742f84ab591d8d5ee8b7ecb5dc6cf059ace0f0dab3b54d8d6c",
+                "Source": "/var/lib/docker/volumes/c852f262f56626742f84ab591d8d5ee8b7ecb5dc6cf059ace0f0dab3b54d8d6c/_data",
+                "Destination": "/data",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "d77223b26741",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "6379/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GOSU_VERSION=1.17",
+                "REDIS_VERSION=7.4.1",
+                "REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-7.4.1.tar.gz",
+                "REDIS_DOWNLOAD_SHA=bc34b878eb89421bbfca6fa78752343bf37af312a09eb0fae47c9575977dfaa2"
+            ],
+            "Cmd": [
+                "redis-server"
+            ],
+            "Image": "redis",
+            "Volumes": {
+                "/data": {}
+            },
+            "WorkingDir": "/data",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "8bf591e96530f59706c0df0d701dc6dce46fd499f0ea4adcf936fc9431467e55",
+            "SandboxKey": "/var/run/docker/netns/8bf591e96530",
+            "Ports": {
+                "6379/tcp": null
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "f21a4cebee9d2402230252c48fa32dbebb7bd73bfc37a29d559b491a453b324c",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.3",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:03",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "02:42:ac:11:00:03",
+                    "DriverOpts": null,
+                    "NetworkID": "a3bf351735c5cadc9588bf129cac0730d5bcf010095c01387ecabbec81d430fd",
+                    "EndpointID": "f21a4cebee9d2402230252c48fa32dbebb7bd73bfc37a29d559b491a453b324c",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+PS C:\Users\admin>
+
+PS C:\Users\admin> docker kill d77223b26741
+d77223b26741
+
+PS C:\Users\admin> docker container stats d77223b26741 --no-stream
+CONTAINER ID   NAME            CPU %     MEM USAGE / LIMIT     MEM %     NET I/O     BLOCK I/O   PIDS
+d77223b26741   relaxed_jones   0.46%     8.277MiB / 6.701GiB   0.12%     746B / 0B   0B / 0B     6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

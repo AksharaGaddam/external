@@ -1,0 +1,214 @@
+PS C:\Users\admin> docker exec -it beautiful_galileo sh
+/ # ls
+bin                   docker-entrypoint.d   etc                   lib                   mnt                   proc                  run                   srv                   tmp                   var
+dev                   docker-entrypoint.sh  home                  media                 opt                   root                  sbin                  sys                   usr
+/ # cd /
+/ # pwd
+/
+/ # df -h
+Filesystem                Size      Used Available Use% Mounted on
+overlay                1006.9G      1.2G    954.4G   0% /
+tmpfs                    64.0M         0     64.0M   0% /dev
+tmpfs                     3.4G         0      3.4G   0% /sys/fs/cgroup
+shm                      64.0M         0     64.0M   0% /dev/shm
+/dev/sdd               1006.9G      1.2G    954.4G   0% /etc/resolv.conf
+/dev/sdd               1006.9G      1.2G    954.4G   0% /etc/hostname
+/dev/sdd               1006.9G      1.2G    954.4G   0% /etc/hosts
+tmpfs                     3.4G         0      3.4G   0% /proc/acpi
+tmpfs                    64.0M         0     64.0M   0% /proc/kcore
+tmpfs                    64.0M         0     64.0M   0% /proc/keys
+tmpfs                    64.0M         0     64.0M   0% /proc/timer_list
+tmpfs                     3.4G         0      3.4G   0% /sys/firmware
+/ # ps aux
+PID   USER     TIME  COMMAND
+    1 root      0:00 nginx: master process nginx -g daemon off;
+   22 nginx     0:00 nginx: worker process
+   23 nginx     0:00 nginx: worker process
+   24 nginx     0:00 nginx: worker process
+   25 nginx     0:00 nginx: worker process
+   26 nginx     0:00 nginx: worker process
+   27 nginx     0:00 nginx: worker process
+   28 nginx     0:00 nginx: worker process
+   29 nginx     0:00 nginx: worker process
+   30 nginx     0:00 nginx: worker process
+   31 nginx     0:00 nginx: worker process
+   32 nginx     0:00 nginx: worker process
+   33 nginx     0:00 nginx: worker process
+   34 nginx     0:00 nginx: worker process
+   35 nginx     0:00 nginx: worker process
+   36 nginx     0:00 nginx: worker process
+   37 nginx     0:00 nginx: worker process
+   52 root      0:00 sh
+   60 root      0:00 ps aux
+/ # printenv
+HOSTNAME=90d800b3535a
+SHLVL=1
+HOME=/root
+OLDPWD=/
+PKG_RELEASE=1
+TERM=xterm
+NGINX_VERSION=1.23.3
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+NJS_VERSION=0.7.9
+PWD=/
+/ # uptime
+ 05:52:40 up  1:07,  0 users,  load average: 0.00, 0.00, 0.00
+/ # find / -name "nginx.conf"
+find: /proc/22/task/22/fdinfo: Permission denied
+find: /proc/22/fdinfo: Permission denied
+find: /proc/23/task/23/fdinfo: Permission denied
+find: /proc/23/fdinfo: Permission denied
+find: /proc/24/task/24/fdinfo: Permission denied
+find: /proc/24/fdinfo: Permission denied
+find: /proc/25/task/25/fdinfo: Permission denied
+find: /proc/25/fdinfo: Permission denied
+find: /proc/26/task/26/fdinfo: Permission denied
+find: /proc/26/fdinfo: Permission denied
+find: /proc/27/task/27/fdinfo: Permission denied
+find: /proc/27/fdinfo: Permission denied
+find: /proc/28/task/28/fdinfo: Permission denied
+find: /proc/28/fdinfo: Permission denied
+find: /proc/29/task/29/fdinfo: Permission denied
+find: /proc/29/fdinfo: Permission denied
+find: /proc/30/task/30/fdinfo: Permission denied
+find: /proc/30/fdinfo: Permission denied
+find: /proc/31/task/31/fdinfo: Permission denied
+find: /proc/31/fdinfo: Permission denied
+find: /proc/32/task/32/fdinfo: Permission denied
+find: /proc/32/fdinfo: Permission denied
+find: /proc/33/task/33/fdinfo: Permission denied
+find: /proc/33/fdinfo: Permission denied
+find: /proc/34/task/34/fdinfo: Permission denied
+find: /proc/34/fdinfo: Permission denied
+find: /proc/35/task/35/fdinfo: Permission denied
+find: /proc/35/fdinfo: Permission denied
+find: /proc/36/task/36/fdinfo: Permission denied
+find: /proc/36/fdinfo: Permission denied
+find: /proc/37/task/37/fdinfo: Permission denied
+find: /proc/37/fdinfo: Permission denied
+/etc/nginx/nginx.conf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
