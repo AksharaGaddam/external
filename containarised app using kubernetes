@@ -2,6 +2,7 @@ kubectl get ns
 kubectl config use-context docker-desktop
 kubectl apply -f "location-mydocker-app"-deployment.yaml
 kubectl get po
+kubectl port-forward svc/podtato-main 9000:9000
 
 
 apiVersion: apps/v1
