@@ -1,0 +1,108 @@
+https://git-scm.com/downloads
+
+C:\Users\aksha>cd DEVOPS
+C:\Users\aksha\DEVOPS>git init
+Reinitialized existing Git repository in C:/Users/aksha/DEVOPS/.git/
+
+C:\Users\aksha\DEVOPS>notepad .gitignore
+
+C:\Users\aksha\DEVOPS>git add .
+
+C:\Users\aksha\DEVOPS>git commit -m "Initial commit with project files"
+[main e04f43e] Initial commit with project files
+1 file changed, 20 insertions(+)
+create mode 100644 .gitignore.txt
+
+C:\Users\aksha\DEVOPS>git status
+On branch main
+Your branch is ahead of ’origin/main’ by 1 commit.
+(use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+C:\Users\aksha\DEVOPS>git config --global user.name "AksharaGaddam"
+C:\Users\aksha\DEVOPS>git config --global user.email "22wh1a05d4@bvrithyderabad.edu.in"
+
+C:\Users\aksha\DEVOPS>git branch master
+C:\Users\aksha\DEVOPS>git branch feature-branch
+
+C:\Users\aksha\DEVOPS>git checkout feature-branch
+Switched to branch ’feature-branch’
+C:\Users\aksha\DEVOPS>git checkout -b feature-branch
+fatal: a branch named ’feature-branch’ already exists
+C:\Users\aksha\DEVOPS>git checkout -b master
+fatal: a branch named ’master’ already exists
+C:\Users\aksha\DEVOPS>git checkout main
+Switched to branch ’main’
+Your branch is ahead of ’origin/main’ by 1 commit.
+(use "git push" to publish your local commits)
+
+C:\Users\aksha\DEVOPS>git merge master
+Already up to date.
+
+C:\Users\aksha\DEVOPS>git branch -d master
+Deleted branch master (was e04f43e).
+C:\Users\aksha\DEVOPS>git log --oneline --graph --all
+* e04f43e (HEAD -> main, feature-branch) Initial commit with project files
+* cd3ddbe (origin/main, origin/HEAD) Add files via upload
+C:\Users\aksha\DEVOPS>git clone https://github.com/AksharaGaddam/DEVOPS.git
+Cloning into ’DEVOPS’...
+
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 7 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (7/7), 959.86 KiB | 988.00 KiB/s, done.
+Resolving deltas: 100% (1/1), done.
+C:\Users\aksha\DEVOPS>git pull origin master
+fatal: couldn’t find remote ref master
+C:\Users\aksha\DEVOPS>git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to ’https://github.com/AksharaGaddam/DEVOPS.git’
+C:\Users\aksha\DEVOPS>git pull origin main
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 2.37 KiB | 269.00 KiB/s, done.
+From https://github.com/AksharaGaddam/DEVOPS
+* branch main -> FETCH_HEAD
+cd3ddbe..cd8e08e main -> origin/main
+Merge made by the ’ort’ strategy.
+registration.html | 128 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1 file changed, 128 insertions(+)
+create mode 100644 registration.html
+
+C:\Users\aksha\DEVOPS>git push origin main
+fatal: User cancelled dialog.
+Username for ’https://github.com’: AksharaGaddam
+Password for ’https://AksharaGaddam@github.com’:
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see
+https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-ur
+ls for information on currently recommended modes of authentication.
+fatal: Authentication failed for ’https://github.com/AksharaGaddam/DEVOPS.git/’
+
+C:\Users\aksha\DEVOPS>git push origin main
+info: please complete authentication in your browser...
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 724 bytes | 724.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/AksharaGaddam/DEVOPS.git
+cd8e08e..c210994 main -> main
+
+C:\Users\aksha\DEVOPS>git stash apply
+No stash entries found.
+C:\Users\aksha\DEVOPS>git stash list
+C:\Users\aksha\DEVOPS>git stash pop
+No stash entries found.
+
+C:\Users\aksha\DEVOPS>git remote add origin https://github.com/AksharaGaddam/DEVOPS.git
+error: remote origin already exists.
+C:\Users\aksha\DEVOPS>git remote -v
+origin https://github.com/AksharaGaddam/DEVOPS.git (fetch)
+origin https://github.com/AksharaGaddam/DEVOPS.git (push)
+
