@@ -1,0 +1,7 @@
+cd<localdir> #to the location where the file of exercise1 is stored.
+• git init #initializes empty git repository on the location.
+• git add . #adds all the files to the staging area
+• git commit –m “initial commit”
+• git remote add origin <git hub repository url>
+• git push –u origin main / git push origin HEADl:master
+output : the exercise 1 file (registration.htm) will be pushed to your github repository
