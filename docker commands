@@ -5,6 +5,7 @@ Try the new cross-platform PowerShell https://aka.ms/pscore6
 
 PS C:\Users\admin> docker --version
 Docker version 27.3.1, build ce12230
+
 PS C:\Users\admin> docker info
 Client:
  Version:    27.3.1
@@ -94,10 +95,12 @@ WARNING: No blkio throttle.write_bps_device support
 WARNING: No blkio throttle.read_iops_device support
 WARNING: No blkio throttle.write_iops_device support
 WARNING: daemon is not using the default seccomp profile
+
 PS C:\Users\admin> docker images
 REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
 redis                    latest    af0be38eb8e4   7 weeks ago     174MB
 docker/getting-started   latest    d79336f4812b   23 months ago   73.9MB
+
 PS C:\Users\admin> docker pull redis
 Using default tag: latest
 latest: Pulling from library/redis
@@ -140,6 +143,7 @@ PS C:\Users\admin> docker run -it redis
 PS C:\Users\admin> docker ps -help
 unknown shorthand flag: 'e' in -elp
 See 'docker ps --help'.
+
 PS C:\Users\admin> docker ps --help
 
 Usage:  docker ps [OPTIONS]
@@ -170,6 +174,7 @@ Options:
       --no-trunc        Don't truncate output
   -q, --quiet           Only display container IDs
   -s, --size            Display total file sizes
+
 PS C:\Users\admin> docker container ls
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 PS C:\Users\admin> docker container ls
@@ -177,10 +182,12 @@ CONTAINER ID   IMAGE                    COMMAND                  CREATED        
 f043a55615a9   redis                    "docker-entrypoint.s…"   32 minutes ago   Up 6 seconds    6379/tcp             priceless_torvalds
 d77223b26741   redis                    "docker-entrypoint.s…"   42 minutes ago   Up 9 seconds    6379/tcp             relaxed_jones
 90d800b3535a   docker/getting-started   "/docker-entrypoint.…"   11 days ago      Up 15 seconds   0.0.0.0:80->80/tcp   beautiful_galileo
+
 PS C:\Users\admin> docker stop f043a55615a9
 f043a55615a9
 PS C:\Users\admin> docker stop 90d800b3535a
 90d800b3535a
+
 PS C:\Users\admin> docker rm f043a55615a9
 f043a55615a9
 PS C:\Users\admin> docker logs d77223b26741
