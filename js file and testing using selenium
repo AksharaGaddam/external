@@ -10,7 +10,7 @@ const{Builder, By, Key, Until}=require('selenium-webdriver');
 })();
 
 
-cd "selenium path"
+cd selenium-path
 npm init -y
 npm install selenium-webdriver chromedriver
 node test.js
